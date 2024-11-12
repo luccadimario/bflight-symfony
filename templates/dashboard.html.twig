@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}BoundlessFlight // Dashboard{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {# Navbar container #}
+        <div id="navbar-container" {{ react_component('Navbar/Navbar',{'initialUserData': userData is defined and userData ? userData|json_encode|raw : null}) }}></div>
+        <div id="navbar-helper" {{react_component('Navbar/NavbarHelper')}}></div>
+        {% block body %}
+            <div {{ react_component('Dashboard/Dashboard', {'initialPlanes': planes}) }}></div>
+        {% endblock %}
+    </body>
+</html>

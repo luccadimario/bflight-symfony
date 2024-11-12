@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}BoundlessFlight // OCRDocs // {{ fileID }}{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {# Navbar container #}
+        <div id="navbar-container" {{ react_component('Navbar/Navbar') }}></div>
+        {% block body %}
+            <div {{ react_component('OCREdit/OCREdit', {'fileID': fileID}) }}></div>
+        {% endblock %}
+    </body>
+</html>

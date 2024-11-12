@@ -1,0 +1,25 @@
+hwi_oauth:
+    firewall_names: [main]
+    use_referer: true
+    # https://github.com/hwi/HWIOAuthBundle/blob/master/docs/2-configuring_resource_owners.md
+    resource_owners:
+        auth0:
+            type: oauth2
+            client_id: 'KR89752PwwqJQKKpBdnZxxBgTMCjvt1U'
+            client_secret: 'Pefi9n77M6GHSUWT4n_uvuxyk5o_jMI-BKdjERJK8o5qZqBaochnRrHFvxKOZsL8'
+            access_token_url: 'https://dev-4xcgebpz80whiwhq.us.auth0.com/oauth/token'
+            authorization_url: 'https://dev-4xcgebpz80whiwhq.us.auth0.com/authorize'
+            infos_url: 'https://dev-4xcgebpz80whiwhq.us.auth0.com/userinfo'
+            user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
+            scope: 'openid profile email'
+            #base_url: 'https://dev-4xcgebpz80whiwhq.us.auth0.com'
+            paths:
+                identifier: 'sub'
+                nickname: 'nickname'
+                realname: 'name'
+                email: 'email'
+                profilepicture: 'picture'
+            start: /login
+            options:
+                csrf: true
+

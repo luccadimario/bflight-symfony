@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}BoundlessFlight // About{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <a href="{{ path('hwi_oauth_service_redirect', {'service': 'auth0'}) }}" class="btn btn-primary">
+        Login with Auth0
+    </a>
+    </body>
+</html>

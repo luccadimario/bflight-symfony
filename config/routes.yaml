@@ -1,0 +1,34 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+
+logout:
+    path: /logout
+
+
+auth0_login:
+    path: /login/check-auth0
+    defaults: {_controller: 'hwi_oauth.controller:connectCallback' }
+
+#auth0_login_form:
+    #path: /user/connect/auth0
+
+#auth0_logout:
+    #path: /user/logout
+
+#api_refresh_token:
+    #path: /api/app/token/refresh

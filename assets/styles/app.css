@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slide-fade-hover {
+    opacity: 0;
+    position: relative;
+    left: -25px;
+    z-index: -5;
+    /* transition out */
+    transition: opacity 0.25s, left 0.5s ease-in-out;
+}
+
+.slide-fade-hover.hovered {
+    z-index: 5;
+    opacity: 1;
+    left: 0;
+    /* transition in */
+    transition: opacity 0.75s, left 0.25s ease-in-out;
+}
+
+.slide-hover {
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease-in-out;
+}
+
+.slide-hover.hovered {
+    left: 10px;
+    transition: left 0.25s ease-in-out;
+}

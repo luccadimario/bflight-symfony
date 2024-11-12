@@ -1,0 +1,34 @@
+security:
+
+    providers:
+        hwi_oauth:
+            id: hwi_oauth.user.provider.entity
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            pattern: ^/
+            provider: hwi_oauth
+            oauth:
+                resource_owners:
+                    auth0: "/login/check-auth0"
+                login_path: /login
+                use_forward: false
+                failure_path: /login
+                oauth_user_provider:
+                    service: App\Security\Auth0UserProvider
+            logout:
+                path: /logout
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        - { path: ^/user/login, roles: PUBLIC_ACCESS }
+        - { path: ^/user/connect, roles: PUBLIC_ACCESS }
+        - { path: ^/user/logout, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        #- { path: ^/, roles: ROLE_USER }
+
+when@test:
+    security:
+

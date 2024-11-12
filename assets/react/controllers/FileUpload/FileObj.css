@@ -1,0 +1,89 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.grid-item {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.react-grid-item {
+    margin: 0 !important;
+    transition: none !important;
+}
+
+.draggable-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.non-draggable {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.file-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.file-preview-container {
+    flex: 1 1 90%; /* This will take up 85% of the available space */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-preview-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-name-container {
+    flex: 0 0 10%; /* This will take up 15% of the available space */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    min-height: 24px; /* Ensure a minimum height for the filename container */
+}
+
+.file-name {
+    max-width: 90%;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.grid-item-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.transition-height {
+    transition: height 0.3s ease
+}
+
+
+
+
+
+
+
