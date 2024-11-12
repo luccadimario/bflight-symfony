@@ -5,9 +5,9 @@
 
 | Authors  | 
 | ------------- | 
-| Vincent Sajkowski  
 | Carmen DiMario  
-| Ryle Traub  
+| Vincent Sajkowski
+| Ryle Traub
 | Christopher Allen 
 
 
